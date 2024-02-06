@@ -1,0 +1,1 @@
+strona oparta na html
