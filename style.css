@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 body{
-    background-color: palevioletred;
+    background-color: rgb(112, 154, 216);
     font-family: 'Pacifico', cursive;
     text-align: center;
     
@@ -16,7 +16,7 @@ img{
   width: 100%;
   height: auto;
   border-radius: 10px;
-  border: #ff1975 solid 3px;
+  border: #ff5757 solid 3px;
 }
 button{
   font-family: 'Lobster', sans-serif;
