@@ -9,17 +9,36 @@
 <body>
 
     
-        <H1>Czy zostaniesz moją walentynką?❤️❤️</H1>
-        <a href="tak.html"><button>TAK</button></a>
-        <button onclick="nie()" >NIE</button>
-        <hr>
-        <img src="romeo.JPG">
-        <h2>❤️❤️Twój Kubuś❤️❤️</h2>
+        <H2 id="demo1">Kliknij na świeczkę by ją zdmuchnąć</H2>
+        <H1 id="demo"></H1>
+
+        <div>
+            <img src="tort4.png" onclick="zmien()" id="myImage" style="border: 0px;">
+            <img src="romeo.JPG" style="border: 0px;">
+            <h2>❤️❤️Twój Kubuś❤️❤️</h2>
+        </div>
+        
+        
         
    
     <script>
-        function nie(){
-            alert("nie można wybrać");
+        function zmien() {
+            var image = document.getElementById('myImage');
+            if (image.src.match("tort4.png")) {
+                image.src = "tort3.png";
+            }
+            else if(image.src.match("tort3.png")){
+                image.src = "tort2.png";
+            }
+            else if(image.src.match("tort2.png")){
+                image.src = "tort1.png";
+                document.getElementById("demo").innerHTML = "Wszytskiego najlepszego z okazji urodzin❤️❤️";
+                document.getElementById("demo1").innerHTML = "";
+                setTimeout("location.href='tak.html';",900);
+            }
+            else if(image.src.match("tort1.png")){
+                image.src = "tort1.png";
+            }
         }
     </script>
 </body>
