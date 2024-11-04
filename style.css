@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
 body{
-    background-color: rgb(112, 154, 216);
-    font-family: 'Pacifico', cursive;
+    background-color: #003f66;
+    font-family: "Playwrite GB S", cursive;
     text-align: center;
     
     font-size: 20px;
@@ -20,11 +21,24 @@ img{
 }
 button{
   font-family: 'Lobster', sans-serif;
-  width: 40%;
+  width: 50%;
   height: 60px;
   font-size: 40px;
   border: 0px;
   border-radius: 10px;
   margin: 10px;
-  background-color: #ff1975;
+  background-color: #19a3ff;
+
 }
+input{
+  border-radius: 10px;
+  border: 0px;
+  width: 50%;
+  height: 60px;
+  text-align: center;
+  font-size: larger;
+  background-color: rgb(250, 121, 121);
+  color: white;
+}
+
+
