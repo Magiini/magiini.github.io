@@ -5,41 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Do Malvinki</title>
+
 </head>
 <body>
-    <H1>❤️Wszystkiego ❤️<br>❤️Najlepszego ❤️ <br>❤️z okazji❤️<br>❤️naszej❤️<br>❤️rocznicy❤️<br>❤️Malvinko❤️</H1>
-    <h2 style="margin: 5px;">bardzo się cieszę że cię mam i dziękuje że jesteś kochanie</h2>
+    <H1>❤️Wszystkiego ❤️<br>❤️Najlepszego ❤️ <br>❤️z okazji❤️<br>❤️twoich❤️<br>❤️18. urodzin❤️<br>❤️Malvinko❤️</H1>
+    <h2 style="margin: 5px;">Życzę ci wszystkiego najfajniejszego i byś spełniła wszystkie swoje marzenia <3</h2>
     <h2 style="margin: 5px;">JESTEŚ NAJLEPSZA!!!</h2>
     <hr>
     <h2>❤️Kocham cię ❤️<br> ❤️bardzo mocno❤️</h2>
     <h2>❤️nasza galeria❤️</h2>
-    <img src="slodziak.JPG">
-    <h1>❤️❤️❤️❤️❤️❤️</h1>
-    <img src="snieg.JPG">
-    <h1>❤️❤️❤️❤️❤️❤️</h1>
-    <img src="raczki.JPEG">
-    <h1>❤️❤️❤️❤️❤️❤️</h1>
-    <img src="lezy.JPG">
-    <h1>❤️❤️❤️❤️❤️❤️</h1>
-    <img src="tuli.JPG">
-    <h1>❤️❤️❤️❤️❤️❤️</h1>
-    <img src="4.JPG">
-    <h1>❤️❤️❤️❤️❤️❤️</h1>
-    <img src="mis.JPG">
-    <h1>❤️❤️❤️❤️❤️❤️</h1>
-    <img src="pupa.JPEG">
-    <h1>❤️❤️❤️❤️❤️❤️</h1>
-    <img src="japan.JPEG">
-    <h1>❤️❤️❤️❤️❤️❤️</h1>
-    <img src="tuli2.JPEG">
-    <h1>❤️❤️❤️❤️❤️❤️</h1>
-    <img src="japan2.JPEG">
-    <h1>❤️❤️❤️❤️❤️❤️</h1>
-    <img src="japan3.JPEG">
-    <h1>❤️❤️❤️❤️❤️❤️</h1>
-    <img src="morze.JPEG">
-    <h1>❤️❤️❤️❤️❤️❤️</h1>
 
+    
+    <div class="gallery-container">
+        
+        <img src="slodziak.JPG" id="obraz">
+        <button class="btn btn-left" onclick="prevSlide()">Zmień </button>
+    </div>
+    
+    <script>
+        let x = 1;
+        function prevSlide(){
+            if(x == 1){
+                document.getElementById("obraz").src = "snieg.JPG";
+                x++;
+            }
+            else if(x == 2){
+                document.getElementById("obraz").src = "Raczki.JPEG";
+                x++;
+            }
+            else if(x == 3){
+                document.getElementById("obraz").src = "lezy.JPG";
+                x++;
+            }
+            else if(x == 4){
+                document.getElementById("obraz").src = "tuli.JPG";
+                x++;
+            }
+            else if(x == 5){
+                document.getElementById("obraz").src = "slodziak.JPG";
+                x++;
+            }
+            else if(x == 6){
+                document.getElementById("obraz").src = "mis.JPG";
+                x++;
+            }
+            else if(x == 7){
+                document.getElementById("obraz").src = "pupa.JPEG";
+                x++;
+            }
+            else if(x == 8){
+                document.getElementById("obraz").src = "japan.JPEG";
+                x++;
+            }
+            else if(x == 9){
+                document.getElementById("obraz").src = "tuli2.JPEG";
+                x++;
+            }
+            else if(x == 10){
+                document.getElementById("obraz").src = "japan2.JPEG";
+                x++;
+            }
+            else if(x == 11){
+                document.getElementById("obraz").src = "japan3.JPEG";
+                x++;
+            }
+            else if(x == 12){
+                document.getElementById("obraz").src = "morze.JPEG";
+                x++;
+            }
+            else if(x == 13){
+                document.getElementById("obraz").src = "kon.JPEG";
+                x++;
+            }
+            else if(x == 14){
+                document.getElementById("obraz").src = "stud.JPEG";
+                x = 1;
+            }
+        }
+    
+
+    </script>
     
     
     <h2 style="margin: 5px;">Pamiętaj że jesteś najlepsza i bardzo mocno cię Kocham.</h2>
