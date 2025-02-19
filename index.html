@@ -10,7 +10,7 @@
 
     
         <H2 id="demo1">Żeby przejść dalej musisz odpowiedzieć na pytanie</H2>
-        <H3 id="demo">Ile jest serduszek na kopercie z prezentu?</H3>
+        <H3 id="demo">Ile dni jesteśmy razem?</H3>
 
         <div id="akcja">
             <input type="number" placeholder="Ile?" id="liczba">
@@ -21,25 +21,34 @@
             <img src="romeo.JPG" style="border: 0px;">
             
         </div>
-
+        
+        
+        
+   
     <script>
         var proby = 0;
         function zmien() {
             var liczba = document.getElementById("liczba").value;
             
-            if(liczba == 167){
+            if(liczba == 473){
                 location.href = "tak.html";
             }
-            else if(liczba > 167){
+            else if(liczba > 473){
                 document.getElementById("blad").innerHTML = "za dużo";
                 proby += 1;
             }
-            else if(liczba < 167){
+            else if(liczba < 473){
                 document.getElementById("blad").innerHTML = "za mało";
                 proby += 1;
             }
             if(proby == 5){
-                document.getElementById("pod").innerHTML = "PODPOWIEDŹ: Tyle ile lat razem jesteśmy razy 167";
+                document.getElementById("pod").innerHTML = "PODPOWIEDŹ: x^2 - 946x + 223729 = 0";
+            }
+            if(proby == 7){
+                document.getElementById("pod").innerHTML = "PODPOWIEDŹ: 1 rok, 3 miesiące i 15 dni";
+            }
+            if(proby == 9){
+                document.getElementById("pod").innerHTML = "DPOWIEDŹ: 473";
             }
 
         }
