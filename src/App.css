@@ -11,6 +11,13 @@ body {
   min-height: 100vh;
 }
 
+.date{
+  font-size:14px;
+  color:#666;
+  margin-bottom:10px;
+  text-transform:capitalize;
+}
+
 /* HEADER */
 
 .header {

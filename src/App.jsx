@@ -33,6 +33,17 @@ function App() {
     return "☁️ Pełne zachmurzenie";
   };
 
+  const getData = () => {
+    const dzis = new Date();
+  
+    return dzis.toLocaleDateString("pl-PL", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
   return (
     <div className="app">
 
@@ -72,6 +83,7 @@ function App() {
             <div className="temperatureCard">
 
               <h2>{wybraneMiasto.stacja}</h2>
+              <div className="date">{getData()}</div>
 
               <div className="temp">
                 {wybraneMiasto.temperatura}°C
