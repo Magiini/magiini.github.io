@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg,#4facfe,#00f2fe);
+  min-height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER */
+
+.header {
+  background: rgba(0,0,0,0.25);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* MAIN */
+
+.main {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* SEARCH */
+
+.search input {
+  padding: 12px;
+  width: 250px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+.results {
+  margin-top: 10px;
+  width: 250px;
+  background: white;
+  border-radius: 10px;
+  padding: 0;
+  list-style: none;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.results li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.results li:hover {
+  background: #f1f1f1;
+}
+
+/* TEMPERATURE CARD */
+
+.temperatureCard {
+  margin-top: 30px;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 280px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.temp {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.clouds {
+  font-size: 18px;
+}
+
+/* DETAILS */
+
+.detailsCard {
+  margin-top: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 280px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.detailsCard p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* FOOTER */
+
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: rgba(0,0,0,0.25);
+  color: white;
+}
