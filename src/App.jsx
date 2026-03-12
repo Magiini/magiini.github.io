@@ -37,7 +37,7 @@ function App() {
     <div className="app">
 
       <header className="header">
-        <h1>CzyJe****Deszczem.pl</h1>
+        <h1>CzyJestDeszcz.pl</h1>
       </header>
 
       <main className="main">
