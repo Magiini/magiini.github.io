@@ -87,7 +87,7 @@ function App() {
         {wybraneMiasto && (
           <>
             <>
-  <div className="temperatureCard">
+    <div className="temperatureCard">
 
     <h2>{wybraneMiasto.stacja}</h2>
     <div className="date">
@@ -108,22 +108,31 @@ function App() {
 
   <div className="windCard">
 
-    <h3>Wiatr</h3>
+<h3>Wiatr</h3>
 
-    <div
-      className="windArrow"
-      style={{
-        transform: `rotate(${wybraneMiasto.kierunek_wiatru}deg)`
-      }}
-    >
-      ↑
-    </div>
+<div className="windCompass">
 
-    <div className="windSpeed">
-      {wybraneMiasto.predkosc_wiatru} m/s
-    </div>
+  <div className="direction north">N</div>
+  <div className="direction east">E</div>
+  <div className="direction south">S</div>
+  <div className="direction west">W</div>
 
+  <div
+    className="windArrow"
+    style={{
+      transform: `rotate(${wybraneMiasto.kierunek_wiatru}deg)`
+    }}
+  >
+    ↑
   </div>
+
+</div>
+
+<div className="windSpeed">
+  {wybraneMiasto.predkosc_wiatru} m/s
+</div>
+
+</div>
 
   {/* POZOSTAŁE DANE */}
 

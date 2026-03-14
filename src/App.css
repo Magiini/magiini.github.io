@@ -221,12 +221,14 @@ nav li + li {
   font-size:18px;
 }
 
+/* WIND CARD */
+
 .windCard{
   margin-top:20px;
   padding:25px;
   border-radius:16px;
   width:280px;
-  animation: fadeTemp 0.5s ease;
+
   background: rgba(255,255,255,0.2);
   backdrop-filter: blur(10px);
 
@@ -236,12 +238,57 @@ nav li + li {
   text-align:center;
 }
 
+/* KOMPAS */
+
+.windCompass{
+  position:relative;
+  width:120px;
+  height:120px;
+  margin:20px auto;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,0.5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
 /* STRZAŁKA */
 
 .windArrow{
-  font-size:60px;
-  margin:10px 0;
+  font-size:50px;
   transition: transform 0.5s ease;
+}
+
+/* KIERUNKI */
+
+.direction{
+  position:absolute;
+  font-weight:bold;
+  color:white;
+}
+
+.north{
+  top:-25px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.south{
+  bottom:-25px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.east{
+  right:-25px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.west{
+  left:-25px;
+  top:50%;
+  transform:translateY(-50%);
 }
 
 /* PRĘDKOŚĆ */
