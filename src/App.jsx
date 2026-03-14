@@ -46,11 +46,17 @@ function App() {
 
   return (
     <div className="app">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"></link>
 
-      <header className="header">
-        <h1>CzyJestDeszcz.pl</h1>
-      </header>
-
+      <nav class="navbar">
+      <div class="logo">☀️ CzyJestDeszcz.pl</div>
+        <ul>
+          <li><a class="active" href="App.jsx">Pogoda </a></li>
+          <li><a href="#news">Ostrzeżenia</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+      
       <main className="main">
 
         <div className="search">
@@ -80,36 +86,59 @@ function App() {
 
         {wybraneMiasto && (
           <>
-            <div className="temperatureCard">
+            <>
+  <div className="temperatureCard">
 
-              <h2>{wybraneMiasto.stacja}</h2>
-              <div className="date">{getData()}</div>
+    <h2>{wybraneMiasto.stacja}</h2>
+    <div className="date">
+      {getData()} {wybraneMiasto.godzina_pomiaru}:00
+    </div>
 
-              <div className="temp">
-                {wybraneMiasto.temperatura}°C
-              </div>
+    <div className="temp">
+      {wybraneMiasto.temperatura}°C
+    </div>
 
-              <div className="clouds">
-                {getZachmurzenie(wybraneMiasto.wilgotnosc_wzgledna)}
-              </div>
+    <div className="clouds">
+      {getZachmurzenie(wybraneMiasto.wilgotnosc_wzgledna)}
+    </div>
 
-            </div>
+  </div>
 
-            <div className="detailsCard">
+  {/* KARTA WIATRU */}
 
-              <p>
-                💨 Wiatr: {wybraneMiasto.predkosc_wiatru} m/s
-              </p>
+  <div className="windCard">
 
-              <p>
-                💧 Wilgotność: {wybraneMiasto.wilgotnosc_wzgledna} %
-              </p>
+    <h3>Wiatr</h3>
 
-              <p>
-                📈 Ciśnienie: {wybraneMiasto.cisnienie} hPa
-              </p>
+    <div
+      className="windArrow"
+      style={{
+        transform: `rotate(${wybraneMiasto.kierunek_wiatru}deg)`
+      }}
+    >
+      ↑
+    </div>
 
-            </div>
+    <div className="windSpeed">
+      {wybraneMiasto.predkosc_wiatru} m/s
+    </div>
+
+  </div>
+
+  {/* POZOSTAŁE DANE */}
+
+  <div className="detailsCard">
+
+    <p>
+      💧 Wilgotność: {wybraneMiasto.wilgotnosc_wzgledna} %
+    </p>
+
+    <p>
+      📈 Ciśnienie: {wybraneMiasto.cisnienie} hPa
+    </p>
+
+  </div>
+</>
           </>
         )}
 
@@ -117,7 +146,7 @@ function App() {
 
       {wybraneMiasto && (
         <footer className="footer">
-          Ostatni pomiar: {wybraneMiasto.godzina_pomiaru}
+          Ostatni pomiar: {wybraneMiasto.godzina_pomiaru}:00
         </footer>
       )}
     </div>

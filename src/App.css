@@ -1,15 +1,19 @@
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg,#4facfe,#00f2fe);
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg,#8ecae6,#219ebc);
   min-height: 100vh;
 }
+
+/* APP LAYOUT */
 
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+
+/* DATE */
 
 .date{
   font-size:14px;
@@ -24,7 +28,7 @@ body {
   background: rgba(0,0,0,0.25);
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 16px;
   font-size: 22px;
   font-weight: bold;
   letter-spacing: 2px;
@@ -38,21 +42,31 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 
 /* SEARCH */
 
 .search input {
-  padding: 12px;
-  width: 250px;
-  border-radius: 10px;
+  padding: 12px 15px;
+  width: 260px;
+  border-radius: 12px;
   border: none;
   font-size: 16px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  outline: none;
 }
+
+.search input:focus {
+  box-shadow: 0 5px 20px rgba(0,0,0,0.35);
+}
+
+/* SEARCH RESULTS */
 
 .results {
   margin-top: 10px;
-  width: 250px;
+  width: 260px;
   background: white;
   border-radius: 10px;
   padding: 0;
@@ -70,22 +84,40 @@ body {
   background: #f1f1f1;
 }
 
-/* TEMPERATURE CARD */
+/* WEATHER CARDS */
+
+.temperatureCard,
+.detailsCard, .windCard {
+  padding: 25px;
+  border-radius: 16px;
+  width: 280px;
+
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.temperatureCard:hover,
+.detailsCard:hover, .windCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
 
 .temperatureCard {
-  margin-top: 30px;
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
   text-align: center;
-  width: 280px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
+
+/* TEMPERATURE */
 
 .temp {
   font-size: 48px;
   font-weight: bold;
   margin: 10px 0;
+  animation: fadeTemp 0.5s ease;
 }
 
 .clouds {
@@ -94,18 +126,22 @@ body {
 
 /* DETAILS */
 
-.detailsCard {
-  margin-top: 20px;
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  width: 280px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
 .detailsCard p {
   margin: 10px 0;
   font-size: 16px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeTemp {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* FOOTER */
@@ -115,4 +151,102 @@ body {
   padding: 15px;
   background: rgba(0,0,0,0.25);
   color: white;
+}
+
+h2, p {
+  margin: 10px;
+}
+
+/* MENU */
+
+nav {
+  background: rgba(2,48,71,0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  padding: 14px 22px;
+  color: #e6f6ff;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+/* hover */
+
+nav a:hover {
+  background: rgba(142,202,230,0.25);
+  color: white;
+}
+
+/* aktywna zakładka */
+
+nav a.active {
+  background: #fb8500;
+  color: white;
+  border-radius: 6px;
+}
+
+/* delikatny separator */
+
+nav li + li {
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 20px;
+}
+.logo{
+  color:white;
+  font-weight:600;
+  font-size:18px;
+}
+
+.windCard{
+  margin-top:20px;
+  padding:25px;
+  border-radius:16px;
+  width:280px;
+  animation: fadeTemp 0.5s ease;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+
+  border:1px solid rgba(255,255,255,0.3);
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+  text-align:center;
+}
+
+/* STRZAŁKA */
+
+.windArrow{
+  font-size:60px;
+  margin:10px 0;
+  transition: transform 0.5s ease;
+}
+
+/* PRĘDKOŚĆ */
+
+.windSpeed{
+  font-size:22px;
+  font-weight:600;
 }
