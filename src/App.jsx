@@ -58,7 +58,7 @@ function App() {
       <nav class="navbar">
       <div class="logo">☀️ CzyJestDeszcz.pl</div>
         <ul>
-          <li><a class="active" href="App.jsx">Pogoda </a></li>
+          <li><a class="active">Pogoda </a></li>
           <li><a href="#news">Ostrzeżenia</a></li>
           <li><a href="#about">About</a></li>
         </ul>
