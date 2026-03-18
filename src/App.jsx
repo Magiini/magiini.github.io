@@ -24,9 +24,16 @@ function App() {
     s.stacja.toLowerCase().startsWith(szukaneMiasto.toLowerCase())
   );
 
-  const getZachmurzenie = (wilgotnosc) => {
+  const getZachmurzenie = (wilgotnosc, sumaOpadu) => {
     const w = Number(wilgotnosc);
-
+    const opad = parseFloat(sumaOpadu);
+  
+    // jeśli pada deszcz
+    if ( opad > 0) {
+      return `🌧 Deszcz (${opad} mm)`;
+    }
+  
+    // w przeciwnym razie klasyczne zachmurzenie
     if (w < 25) return "☀️ Słonecznie";
     if (w < 50) return "🌤 Lekkie zachmurzenie";
     if (w < 75) return "⛅ Częściowe zachmurzenie";
@@ -88,21 +95,22 @@ function App() {
           <>
             <>
     <div className="temperatureCard">
+      <h2>{wybraneMiasto.stacja}</h2>
+      <div className="date">
+        {getData()} {wybraneMiasto.godzina_pomiaru}:00
+      </div>
 
-    <h2>{wybraneMiasto.stacja}</h2>
-    <div className="date">
-      {getData()} {wybraneMiasto.godzina_pomiaru}:00
+      <div className="temp">
+        {wybraneMiasto.temperatura}°C
+      </div>
+
+      <div className="clouds">
+        {getZachmurzenie(
+          wybraneMiasto.wilgotnosc_wzgledna,
+          wybraneMiasto.suma_opadu,
+        )}
+      </div>
     </div>
-
-    <div className="temp">
-      {wybraneMiasto.temperatura}°C
-    </div>
-
-    <div className="clouds">
-      {getZachmurzenie(wybraneMiasto.wilgotnosc_wzgledna)}
-    </div>
-
-  </div>
 
   {/* KARTA WIATRU */}
 
