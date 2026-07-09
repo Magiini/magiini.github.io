@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pl" data-bs-theme="dark">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Szczegóły modelu</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</head>
+
+
+<body class="bg-dark">
+
+
+<div class="container py-5">
+
+
+<h1 class="text-center mb-4">
+🔥 Hot Tracker
+</h1>
+
+
+<div class="card shadow">
+
+<div class="card-body">
+
+
+<h2 id="nazwa">
+Ładowanie...
+</h2>
+
+
+<hr>
+
+
+<p>
+<b>Seria:</b>
+<span id="seria"></span>
+</p>
+
+
+<p>
+<b>Podseria:</b>
+<span id="podseria"></span>
+</p>
+
+
+<p>
+<b>Numer:</b>
+<span id="numer"></span>
+</p>
+
+
+<p>
+<b>Rok:</b>
+<span id="rok"></span>
+</p>
+
+
+<p>
+<b>Ilość:</b>
+<span id="ilosc"></span>
+</p>
+
+<p>
+<b>Cena eBay:</b>
+<span id="cena">Ładowanie...</span>
+</p>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+const supabaseUrl = "https://cnlfislhzzzqfhgweaic.supabase.co";
+
+const supabaseKey = "sb_publishable_wFtTBnYacmmgovQhqGvI6A_tBt0EyBm";
+
+
+const db = window.supabase.createClient(
+    supabaseUrl,
+    supabaseKey
+);
+
+
+
+async function pobierzModel(){
+
+    const parametry = new URLSearchParams(
+        window.location.search
+    );
+
+    const id = parametry.get("id");
+
+
+    const {data,error}=await db
+    .from("Modele")
+    .select("*")
+    .eq("id",id)
+    .single();
+
+
+    if(error){
+
+        console.log(error);
+        return;
+
+    }
+
+
+    document.getElementById("nazwa").innerHTML =
+    data.Nazwa_modelu;
+
+
+    document.getElementById("seria").innerHTML =
+    data.Seria ?? "";
+
+
+    document.getElementById("podseria").innerHTML =
+    data.Podseria ?? "";
+
+
+    document.getElementById("numer").innerHTML =
+    data.Numer ?? "";
+
+
+    document.getElementById("rok").innerHTML =
+    data.Rok ?? "";
+
+
+    document.getElementById("ilosc").innerHTML =
+    data.Ilosc + " szt.";
+
+
+    pobierzCene(data.id);
+
+}
+
+
+
+async function pobierzCene(modelId){
+
+
+    const {data,error}=await db
+    .from("CenyEbay")
+    .select("*")
+    .eq("model_id",modelId)
+    .single();
+
+
+
+    if(error || !data){
+
+        document.getElementById("cena").innerHTML =
+        "Brak wyceny";
+
+        return;
+
+    }
+
+
+
+    document.getElementById("cena").innerHTML =
+    data.cena + " USD (" +
+    data.ilosc_ofert +
+    " ofert)";
+
+}
+
+
+
+pobierzModel();
+
+let czas = sessionStorage.getItem("czasLogowania");
+
+if(
+    !sessionStorage.getItem("dostep") ||
+    !czas ||
+    Date.now() - czas > 60 * 60 * 1000
+){
+
+    sessionStorage.clear();
+
+    window.location.href="pin.html";
+
+}
+</script>
+
+
+</body>
+
+</html>
