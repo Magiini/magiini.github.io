@@ -123,11 +123,6 @@ placeholder="np. Porsche">
 Ładowanie...
 </span>
 </h3>
-<button
-    class="btn btn-warning mb-3"
-    onclick="aktualizujCeny()">
-    🔄 Aktualizuj ceny
-</button>
 </div>
 </div>
 
@@ -211,7 +206,7 @@ modele=data;
 
 wyswietl();
 
-
+policzWartoscKolekcji();
 }
 
 
@@ -275,6 +270,8 @@ onclick="pokazModel('${model.id}')">
 
 <td>${model.Rok}</td>
 
+
+
 <td>
 <span class="badge bg-success">
 ${model.Ilosc} szt.
@@ -284,9 +281,9 @@ ${model.Ilosc} szt.
 <td>
 
 ${
-model.cenaEbay
+model.Mediana
 ?
-model.cenaEbay.cena + " USD"
+model.Mediana + " USD"
 :
 "Brak"
 }
@@ -302,7 +299,25 @@ model.cenaEbay.cena + " USD"
 
 }
 
+function policzWartoscKolekcji(){
 
+    let suma = 0;
+
+    modele.forEach(model => {
+
+        if(model.Mediana && model.Ilosc){
+
+            suma += Number(model.Mediana) * Number(model.Ilosc);
+
+        }
+
+    });
+
+
+    document.getElementById("wartoscKolekcji").innerHTML =
+        suma.toFixed(2) + " USD";
+
+}
 
 function pokazModel(id){
 
